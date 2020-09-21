@@ -508,6 +508,8 @@ NSString * const ID = @"SDCycleScrollViewCell";
             pageControl.dotSize = self.pageControlDotSize;
         }
         size = [pageControl sizeForNumberOfPages:self.imagePathsGroup.count];
+    } else if ([self.pageControl isKindOfClass:[UIPageControl class]]) {
+        size = [(UIPageControl *)self.pageControl sizeForNumberOfPages:self.imagePathsGroup.count];
     } else {
         size = CGSizeMake(self.imagePathsGroup.count * self.pageControlDotSize.width * 1.5, self.pageControlDotSize.height);
     }
